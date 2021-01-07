@@ -3,8 +3,8 @@
 # Install applications
 # Comment (with #) what should not be installed and add the applications you want to install.
 
-source ./install/utils.sh
-keep_sudo_alive
+# source ./install/utils.sh
+# keep_sudo_alive
 
 # Update Ubuntu
 sudo apt update
@@ -13,14 +13,11 @@ sudo apt upgrade -y
 # Essential package
 sudo apt -y install build-essential
 
-# Git
-sudo add-apt-repository -y ppa:git-core/ppa
-sudo apt -y update
-sudo apt -y install git
-
 # Nodejs
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 sudo apt install -y nodejs npm
+
+sudo chown -R $USER /usr/lib/node_modules/
 
 # Nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
